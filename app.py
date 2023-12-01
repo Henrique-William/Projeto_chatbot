@@ -1,12 +1,11 @@
 from flask import Flask,render_template, request, Response
 import os
 import openai
-import dotenv
 from time import sleep
 import tiktoken
 
 app = Flask(__name__)
-secret_key = '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'  
+secret_key = 'SUA_CHAVE_OPENAI'
 
 openai.api_key = secret_key
 
@@ -60,7 +59,7 @@ def bot(prompt,historico):
                 ],
                 stream = True,
                 temperature=1,
-                max_tokens=50,
+                max_tokens=255,
                 top_p=1,
                 frequency_penalty=0,
                 presence_penalty=0,
